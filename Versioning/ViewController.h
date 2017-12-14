@@ -10,6 +10,10 @@
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *bundleIdentifier;
+@property (strong, nonatomic) IBOutlet UITextField *bundleName;
+@property (strong, nonatomic) IBOutlet UITextField *bundleVersionString;
+@property (strong, nonatomic) IBOutlet UITextField *bundleVersion;
 
 @end
 

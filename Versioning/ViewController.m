@@ -14,9 +14,22 @@
 
 @implementation ViewController
 
+@synthesize bundleIdentifier;
+@synthesize bundleName;
+@synthesize bundleVersionString;
+@synthesize bundleVersion;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.bundleIdentifier.text = (NSString*)CFDictionaryGetValue(CFBundleGetInfoDictionary(CFBundleGetMainBundle()),(const void *)(@"CFBundleIdentifier"));
+    
+    self.bundleName.text = (NSString*)CFDictionaryGetValue(CFBundleGetInfoDictionary(CFBundleGetMainBundle()),(const void *)(@"CFBundleName"));
+    
+    self.bundleVersionString.text = (NSString*)CFDictionaryGetValue(CFBundleGetInfoDictionary(CFBundleGetMainBundle()),(const void *)(@"CFBundleShortVersionString"));
+    
+    self.bundleVersion.text = (NSString*)CFDictionaryGetValue(CFBundleGetInfoDictionary(CFBundleGetMainBundle()),(const void *)(@"CFBundleVersion"));
 }
 
 
